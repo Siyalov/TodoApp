@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, FlatList } from 'react-native';
+import TodoItem from '../TodoItem';
 
 const TodoData = [
   {
@@ -30,21 +31,17 @@ const TodoData = [
 ];
 
 const TodoList = () => {
-  const renderItem = ({ item }) => {
-    return (
-      <View>
-        <Text>{item.name}</Text>
-        <Text>{item.category}</Text>
-      </View>
-    );
-  };
+  const renderItem = ({ item }) => (
+    <TodoItem name={item.name} category={item.category} />
+  );
+
   return (
     <View>
       {/* {TodoData.map(e => <renderItem item={e} />)} */}
       <FlatList
         data={TodoData}
         renderItem={renderItem}
-        keyExtractor={item => item.id}
+        keyExtractor={(item) => item.id}
       />
     </View>
   );
