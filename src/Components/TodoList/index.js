@@ -1,36 +1,8 @@
 import React from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, FlatList } from 'react-native';
 import TodoItem from '../TodoItem';
 
-const TodoData = [
-  {
-    id: '1',
-    name: 'Задача 1',
-    category: 'Финансы_1',
-  },
-  {
-    id: '2',
-    name: 'Задача 2',
-    category: 'Финансы_2',
-  },
-  {
-    id: '3',
-    name: 'Задача 3',
-    category: 'Финансы_3',
-  },
-  {
-    id: '4',
-    name: 'Задача 4',
-    category: 'Финансы_4',
-  },
-  {
-    id: '5',
-    name: 'Задача 5',
-    category: 'Финансы_5',
-  },
-];
-
-const TodoList = () => {
+const TodoList = ({ todoData }) => {
   const renderItem = ({ item }) => (
     <TodoItem name={item.name} category={item.category} />
   );
@@ -39,9 +11,9 @@ const TodoList = () => {
     <View>
       {/* {TodoData.map(e => <renderItem item={e} />)} */}
       <FlatList
-        data={TodoData}
+        data={todoData}
         renderItem={renderItem}
-        keyExtractor={(item) => item.id}
+        keyExtractor={item => item.id}
       />
     </View>
   );
