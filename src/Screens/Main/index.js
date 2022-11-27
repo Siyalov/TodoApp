@@ -63,8 +63,7 @@ const Main = () => {
   const filterTodoData = ({ data, status }) =>
     data.filter(item => item.isCompleted === status);
 
-  const setTaskComplited = ({ isChacked, id }) => {
-    const task = todoData.find(item => item.id === id);
+  const setTaskCompleted = ({ isChacked, id }) => {
     const newTodoData = todoData.map(item => {
       if (item.id === id) {
         return {
@@ -83,12 +82,12 @@ const Main = () => {
       <TodoBlock
         todoData={filterTodoData({ data: todoData, status: false })}
         title={'Новые!'}
-        setTaskComplited={setTaskComplited}
+        setTaskCompleted={setTaskCompleted}
       />
       <TodoBlock
         todoData={filterTodoData({ data: todoData, status: true })}
         title={'Выполненные!'}
-        setTaskComplited={setTaskComplited}
+        setTaskCompleted={setTaskCompleted}
       />
       <CircleButton add={addNewTask} />
     </View>

@@ -2,9 +2,15 @@ import React from 'react';
 import { View, FlatList } from 'react-native';
 import TodoItem from '../TodoItem';
 
-const TodoList = ({ todoData }) => {
-  const renderItem = ({ item }) => (
-    <TodoItem id={item.id} name={item.name} category={item.category} />
+const TodoList = ({ todoData, setTaskCompleted }) => {
+  const renderItem = ({ item, isCompleted }) => (
+    <TodoItem
+      id={item.id}
+      name={item.name}
+      category={item.category}
+      setTaskCompleted={setTaskCompleted}
+      isCompleted={isCompleted}
+    />
   );
 
   return (

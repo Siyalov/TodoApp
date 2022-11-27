@@ -1,12 +1,13 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import TodoList from '../TodoList';
+import styles from './styles';
 
-const TodoBlock = ({ todoData, title, setTaskComplited }) => {
+const TodoBlock = ({ todoData, title, setTaskCompleted }) => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text>{title}</Text>
-      <TodoList todoData={todoData} setTaskComplited={setTaskComplited} />
+      <TodoList todoData={todoData} setTaskCompleted={setTaskCompleted} />
     </View>
   );
 };
