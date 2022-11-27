@@ -41,6 +41,7 @@ const intialTask = {
   id: null,
   name: 'Новая задача',
   category: null,
+  isCompleted: false,
 };
 
 const generateId = () => Math.floor(Math.random() * 1000);
@@ -58,10 +59,37 @@ const Main = () => {
     ]);
     //  console.log('task', task);
   };
+
+  const filterTodoData = ({ data, status }) =>
+    data.filter(item => item.isCompleted === status);
+
+  const setTaskComplited = ({ isChacked, id }) => {
+    const task = todoData.find(item => item.id === id);
+    const newTodoData = todoData.map(item => {
+      if (item.id === id) {
+        return {
+          ...item,
+          isCompleted: isChacked,
+        };
+      } else {
+        return item;
+      }
+    });
+    setTodoData(newTodoData);
+  };
+
   return (
     <View style={styles.container}>
-      <TodoBlock todoData={todoData} title={'Новые'} />
-      <TodoBlock todoData={todoData} title={'Новые'} />
+      <TodoBlock
+        todoData={filterTodoData({ data: todoData, status: false })}
+        title={'Новые!'}
+        setTaskComplited={setTaskComplited}
+      />
+      <TodoBlock
+        todoData={filterTodoData({ data: todoData, status: true })}
+        title={'Выполненные!'}
+        setTaskComplited={setTaskComplited}
+      />
       <CircleButton add={addNewTask} />
     </View>
   );

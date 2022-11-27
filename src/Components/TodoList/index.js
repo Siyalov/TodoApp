@@ -4,7 +4,7 @@ import TodoItem from '../TodoItem';
 
 const TodoList = ({ todoData }) => {
   const renderItem = ({ item }) => (
-    <TodoItem name={item.name} category={item.category} />
+    <TodoItem id={item.id} name={item.name} category={item.category} />
   );
 
   return (
