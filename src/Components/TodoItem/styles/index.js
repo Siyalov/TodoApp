@@ -2,11 +2,32 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 0.5,
+    paddingVertical: 10,
+    paddingHorizontal: 5,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
-  title: {
+  infoContainer: {
+    flexDirection: 'row',
+  },
+  textContainer: {
+    marginLeft: 15,
+  },
+  nameText: {
     fontSize: 18,
-    fontWeight: 'bold',
+    marginBottom: 5,
+  },
+  completedNameText: {
+    color: '#B9B9BE',
+  },
+  iconsContainer: {
+    flexDirection: 'row',
+  },
+  icon: {
+    marginHorizontal: 3,
+  },
+  categoryText: {
+    color: '#58595B',
   },
 });
 

@@ -1,20 +1,14 @@
+
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: 10,
-    paddingHorizontal: 5,
-    flexDirection: 'row',
+    flex: 0.5,
   },
-  textContainer: {
-    marginLeft: 15,
-  },
-  nameText: {
+  title: {
     fontSize: 18,
+    fontWeight: 'bold',
     marginBottom: 5,
-  },
-  categoryText: {
-    color: '#58595B',
   },
 });
 

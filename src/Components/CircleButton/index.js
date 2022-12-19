@@ -1,11 +1,12 @@
 import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity, Text, View } from 'react-native';
 import styles from './styles';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const CircleButton = ({ add }) => {
   return (
     <TouchableOpacity style={styles.container} onPress={() => add()}>
-      <Text style={styles.text}>+</Text>
+      <Icon name="plus" size={25} color="#ffffff" />
     </TouchableOpacity>
   );
 };
