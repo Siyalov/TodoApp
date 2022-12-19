@@ -3,7 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, Picker } from 'react-native';
 import styles from './styles';
 import CheckBox from '@react-native-community/checkbox';
 import { todoProps } from '../../Constants/Todo';
-import { Icon } from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const TodoItem = ({
   id,
@@ -25,7 +25,7 @@ const TodoItem = ({
   };
 
   const renderPickerItems = () =>
-    Object.keys(todoCategories).map(key => (      
+    Object.keys(todoCategories).map(key => (
       <Picker.Item label={todoCategories[key]} value={todoCategories[key]} />
     ));
 
@@ -56,7 +56,7 @@ const TodoItem = ({
           {isCompleted ? null : isEditable ? (
             <Picker
               selectedValue={category}
-              onValueChange={(value) => onChange(todoProps.category, value)}>
+              onValueChange={value => onChange(todoProps.category, value)}>
               {renderPickerItems()}
             </Picker>
           ) : (
@@ -72,7 +72,7 @@ const TodoItem = ({
             </TouchableOpacity>
           </View>
           <View style={styles.icon}>
-            <TouchableOpacity 
+            <TouchableOpacity
               onPress={() => onDeleteTodo({ id })}
               style={styles.icon}>
               <Icon name="trash" size={25} color="#000000" />
