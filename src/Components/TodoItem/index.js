@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Picker } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { Picker } from '@react-native-picker/picker';
 import styles from './styles';
 import CheckBox from '@react-native-community/checkbox';
 import { todoProps } from '../../Constants/Todo';
@@ -26,7 +27,11 @@ const TodoItem = ({
 
   const renderPickerItems = () =>
     Object.keys(todoCategories).map(key => (
-      <Picker.Item label={todoCategories[key]} value={todoCategories[key]} />
+      <Picker.Item
+        key={todoCategories[key]}
+        label={todoCategories[key]}
+        value={todoCategories[key]}
+      />
     ));
 
   return (
